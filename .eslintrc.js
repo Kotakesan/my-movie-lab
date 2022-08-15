@@ -2,10 +2,10 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
   },
   extends: [
     '@nuxtjs',
@@ -16,6 +16,7 @@ module.exports = {
   plugins: [],
   // add your custom rules here
   rules: {
-    'vue/multiline-html-element-content-newline': 'never',
-  }
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/multiline-html-element-content-newline': 'off',
+  },
 }
