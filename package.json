@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "my-movie-lab",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3"
   },
