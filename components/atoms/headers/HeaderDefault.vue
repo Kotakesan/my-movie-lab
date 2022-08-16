@@ -1,6 +1,10 @@
 <template>
   <v-app-bar fixed app>
-    <v-toolbar-title class="header" @click="$router.push('/')" v-text="title" />
+    <v-toolbar-title
+      class="header"
+      @click="$router.push('/movies')"
+      v-text="title"
+    />
     <v-spacer />
     <v-btn icon @click.stop="$emit('click')">
       <v-icon>mdi-menu</v-icon>
