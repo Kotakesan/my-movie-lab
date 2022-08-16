@@ -32,6 +32,7 @@ export default {
     '~/components/molecules',
     '~/components/molecules/sidebars',
     '~/components/organisms',
+    '~/components/organisms/lists',
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
