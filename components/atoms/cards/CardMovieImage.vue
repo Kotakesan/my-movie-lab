@@ -40,7 +40,7 @@ export default {
 }
 .card-movie-image .card-movie-image__title {
   color: #fff;
-  font-size: 110%;
+  font-size: 150%;
 }
 .card-movie-image .card-movie-image__title-wrapper {
   width: 100%;
