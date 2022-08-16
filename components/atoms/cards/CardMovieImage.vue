@@ -2,7 +2,7 @@
   <v-card class="card-movie-image">
     <v-img
       :src="`${imageBaseUrl}` + imageSource"
-      :alt="name"
+      :alt="title"
       :max-width="maxWidth"
       contain
     />
