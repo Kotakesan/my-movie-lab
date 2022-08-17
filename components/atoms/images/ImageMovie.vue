@@ -2,7 +2,7 @@
   <div class="image-movie">
     <v-img
       class="mx-auto"
-      :src="`${imageBaseUrl}` + imageSource"
+      :src="img"
       :alt="title"
       :max-width="maxWidth"
       contain
@@ -25,12 +25,17 @@ export default {
     title: { type: String, default: '' },
     imageSource: { type: String, default: '' },
     maxWidth: { type: [String, Number], default: '100%' },
-    noHover: { type: Boolean, default: true },
+    noHover: { type: Boolean, default: false },
   },
   data() {
     return {
       imageBaseUrl: 'https://image.tmdb.org/t/p/w500',
     }
+  },
+  computed: {
+    img() {
+      return this.imageBaseUrl + this.imageSource
+    },
   },
 }
 </script>
@@ -38,10 +43,17 @@ export default {
 <style lang="scss" scoped>
 .image-movie {
   position: relative;
+  width: 100%;
+}
+.image-movie__icon {
+  width: 500px;
 }
 .image-movie .image-movie__title {
   color: #fff;
   font-size: 150%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .image-movie .image-movie__title-wrapper {
   width: 100%;
@@ -50,7 +62,7 @@ export default {
   top: 0;
   left: 0;
   opacity: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(18, 18, 18, 0.4);
   transition: all 0.1s ease-in;
   cursor: pointer;
 }

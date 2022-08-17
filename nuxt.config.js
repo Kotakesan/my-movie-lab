@@ -26,13 +26,18 @@ export default {
   components: [
     '~/components',
     '~/components/atoms',
+    '~/components/atoms/buttons',
+    '~/components/atoms/formats',
     '~/components/atoms/images',
     '~/components/atoms/headers',
-    '~/components/atoms/labels',
     '~/components/molecules',
+    '~/components/molecules/cards',
+    '~/components/molecules/labels',
     '~/components/molecules/sidebars',
     '~/components/organisms',
+    '~/components/organisms/contents',
     '~/components/organisms/lists',
+    '~/components/organisms/modals',
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules

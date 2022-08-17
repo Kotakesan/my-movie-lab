@@ -1,7 +1,7 @@
 <template>
   <div>
-    <LabelTitle title="Popular Movies" />
-    <ListMovies :movies="movies" />
+    <ListMovies title="Popular Movies" :movies="movies" @click="onClick" />
+    <ModalMovieDetail v-model="modal" :movie="selectedMovie" />
   </div>
 </template>
 
@@ -17,11 +17,13 @@ export default {
   data() {
     return {
       movies: [],
+      selectedMovie: {},
+      modal: false,
     }
   },
   methods: {
-    onClick(id) {
-      this.$router.push(`/movies/${id}`)
+    onClick(movie) {
+      this.$router.push(`/movies/${movie.id}`)
     },
   },
 }
