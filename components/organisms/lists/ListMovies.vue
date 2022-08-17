@@ -6,7 +6,7 @@
       class="mx-2 mb-4"
       cols="2"
     >
-      <CardMovieImage
+      <ImageMovie
         :title="movie.title"
         :image-source="movie.poster_path"
         :no-hover="false"

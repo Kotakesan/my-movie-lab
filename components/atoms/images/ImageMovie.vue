@@ -1,6 +1,7 @@
 <template>
-  <v-card class="card-movie-image">
+  <div class="image-movie">
     <v-img
+      class="mx-auto"
       :src="`${imageBaseUrl}` + imageSource"
       :alt="title"
       :max-width="maxWidth"
@@ -8,14 +9,14 @@
     />
     <div
       v-if="!noHover"
-      class="card-movie-image__title-wrapper"
+      class="image-movie__title-wrapper"
       @click="$emit('click')"
     >
-      <div class="card-movie-image__title pt-16 text-center font-weight-bold">
+      <div class="image-movie__title pt-16 text-center font-weight-bold">
         {{ title }}
       </div>
     </div>
-  </v-card>
+  </div>
 </template>
 
 <script>
@@ -35,14 +36,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card-movie-image {
+.image-movie {
   position: relative;
 }
-.card-movie-image .card-movie-image__title {
+.image-movie .image-movie__title {
   color: #fff;
   font-size: 150%;
 }
-.card-movie-image .card-movie-image__title-wrapper {
+.image-movie .image-movie__title-wrapper {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -53,7 +54,7 @@ export default {
   transition: all 0.1s ease-in;
   cursor: pointer;
 }
-.card-movie-image:hover .card-movie-image__title-wrapper {
+.image-movie:hover .image-movie__title-wrapper {
   opacity: 1;
 }
 </style>

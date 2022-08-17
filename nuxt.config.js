@@ -26,7 +26,7 @@ export default {
   components: [
     '~/components',
     '~/components/atoms',
-    '~/components/atoms/cards',
+    '~/components/atoms/images',
     '~/components/atoms/headers',
     '~/components/atoms/labels',
     '~/components/molecules',
