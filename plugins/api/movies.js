@@ -18,4 +18,14 @@ export default class {
         .then(({ data }) => data.results)
     },
   }
+
+  recommendations = {
+    list: (id) => {
+      this.axios
+        .get(
+          `${resource}/${id}/recommendations?api_key=42f0a504684fbdc1c5af56bc8d909ceb`
+        )
+        .then(({ data }) => data.results)
+    },
+  }
 }
