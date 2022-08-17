@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="label-title mr-4" v-text="title" />
+    <p class="label-title mr-4 ml-8" v-text="title" />
     <v-divider class="my-2" />
   </div>
 </template>
