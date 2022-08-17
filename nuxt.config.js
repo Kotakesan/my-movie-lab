@@ -31,7 +31,6 @@ export default {
     '~/components/atoms/images',
     '~/components/atoms/headers',
     '~/components/molecules',
-    '~/components/molecules/cards',
     '~/components/molecules/labels',
     '~/components/molecules/sidebars',
     '~/components/organisms',

@@ -43,10 +43,6 @@ export default {
 <style lang="scss" scoped>
 .image-movie {
   position: relative;
-  width: 100%;
-}
-.image-movie__icon {
-  width: 500px;
 }
 .image-movie .image-movie__title {
   color: #fff;

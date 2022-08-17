@@ -5,6 +5,7 @@
       <ImageMovie
         :title="collection.name"
         :image-source="collection.poster_path"
+        max-width="50%"
       />
     </div>
   </div>

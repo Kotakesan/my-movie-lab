@@ -1,7 +1,7 @@
 <template>
   <div>
     <LabelTitle class="pt-8" :title="title" />
-    <CardContent :content="content" />
+    <div class="card-content__text pa-8">{{ content }}</div>
   </div>
 </template>
 
