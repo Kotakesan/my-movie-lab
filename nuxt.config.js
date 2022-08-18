@@ -35,13 +35,13 @@ export default {
     '~/components/atoms/formats',
     '~/components/atoms/images',
     '~/components/molecules',
-    '~/components/molecules/headers',
     '~/components/molecules/labels',
-    '~/components/molecules/sidebars',
     '~/components/organisms',
     '~/components/organisms/contents',
+    '~/components/organisms/headers',
     '~/components/organisms/lists',
     '~/components/organisms/modals',
+    '~/components/organisms/sidebars',
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
