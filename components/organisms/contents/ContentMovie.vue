@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LabelTitle class="pt-8" :title="title" />
+    <LabelTitle class="pt-4" :title="title" />
     <div class="card-content__text pa-8">{{ content }}</div>
   </div>
 </template>

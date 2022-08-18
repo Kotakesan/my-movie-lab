@@ -21,7 +21,9 @@
             <div class="mb-1">
               {{ formatGenres }}
             </div>
-            <BtnSmall><v-icon> mdi-star-outline</v-icon></BtnSmall>
+            <BtnSmall @click="$emit('click:favorite', movie)">
+              <v-icon> {{ favorite }}</v-icon>
+            </BtnSmall>
           </div>
         </div>
       </div>
@@ -33,6 +35,7 @@
 export default {
   props: {
     movie: { type: Object, default: () => ({}) },
+    isFavored: { type: Boolean, default: false },
   },
   data() {
     return {
@@ -45,6 +48,9 @@ export default {
     },
     formatGenres() {
       return this.movie.genres.map(({ name }) => name).join(', ')
+    },
+    favorite() {
+      return this.isFavored ? 'mdi-star' : 'mdi-star-outline'
     },
   },
 }

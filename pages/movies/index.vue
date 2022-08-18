@@ -16,7 +16,6 @@ export default {
   },
   data() {
     return {
-      movies: [],
       selectedMovie: {},
       modal: false,
     }
