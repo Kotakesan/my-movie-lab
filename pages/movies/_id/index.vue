@@ -1,6 +1,10 @@
 <template>
   <div>
-    <LabelMovie :movie="movie" />
+    <LabelMovie
+      :movie="movie"
+      :is-favored="isFavored"
+      @click:favorite="onClickFavorite"
+    />
     <ContentMovie title="Overview" :content="movie.overview" />
     <ContentCollection
       v-if="movie.belongs_to_collection"
@@ -20,6 +24,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   async asyncData({ app, params }) {
     const movieId = params.id
@@ -33,11 +39,20 @@ export default {
       recommendations,
     }
   },
+  computed: {
+    isFavored() {
+      return this.movies.some(({ id }) => id === Number(this.movieId))
+    },
+    ...mapGetters('favorite', ['movies']),
+  },
   methods: {
     // TODO: recommended movies
     // onClick(movie) {
     //   this.$router.push(`/movies/${movie.id}`)
     // },
+    onClickFavorite(movie) {
+      this.$store.commit('favorite/favor', movie)
+    },
   },
 }
 </script>
