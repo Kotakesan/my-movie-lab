@@ -16,11 +16,16 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  mode: 'spa',
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/api.js'],
+  plugins: [
+    '~/plugins/api.js',
+    { src: '@/plugins/persisted-state', mode: 'client' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: [
@@ -29,8 +34,8 @@ export default {
     '~/components/atoms/buttons',
     '~/components/atoms/formats',
     '~/components/atoms/images',
-    '~/components/atoms/headers',
     '~/components/molecules',
+    '~/components/molecules/headers',
     '~/components/molecules/labels',
     '~/components/molecules/sidebars',
     '~/components/organisms',
