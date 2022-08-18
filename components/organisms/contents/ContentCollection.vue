@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LabelTitle class="pt-8" title="Collection" />
+    <LabelTitle class="pt-4" title="Collection" />
     <div class="content-collection__img pa-8">
       <ImageMovie
         :title="collection.name"

@@ -35,14 +35,9 @@ export default {
     return {
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
+          icon: 'mdi-star',
+          title: 'Favorite Movies',
+          to: '/movies/favorite',
         },
       ],
     }

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <LabelTitle class="pt-8" title="Popular Movies" />
-    <v-row class="mt-4" justify="center">
+    <LabelTitle class="pt-4" :title="title" />
+    <v-row class="mt-4 ml-8">
       <v-col
         v-for="(movie, index) in movies"
         :key="index"
