@@ -1,12 +1,23 @@
 <template>
-  <v-app-bar fixed app>
-    <v-toolbar-title class="header-default mr-8 pr-2">
-      <div @click="$router.push('/movies')">
-        <div class="d-flex">
-          <v-icon class="mr-4">mdi-movie-open-star</v-icon>
-          <div>
-            {{ title }}
+  <v-app-bar flat clipped-left fixed app>
+    <v-toolbar-title>
+      <div>
+        <div class="d-flex align-center">
+          <div class="header-default__title">
+            <div class="d-flex" @click="$router.push('/movies')">
+              <v-icon class="mr-4">mdi-movie-open-star</v-icon>
+              <div>
+                {{ title }}
+              </div>
+            </div>
           </div>
+          <InputSearch
+            v-model="searchText"
+            class="mt-5 ml-8"
+            placeholder="search..."
+            background-color="transparent"
+            @search="onSearch"
+          />
         </div>
       </div>
     </v-toolbar-title>
@@ -27,13 +38,22 @@ export default {
   data() {
     return {
       title: 'My Movie Lab',
+      searchText: '',
     }
+  },
+  methods: {
+    onSearch() {
+      this.$router.push({
+        path: '/movies',
+        query: { query: this.searchText || undefined },
+      })
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.header-default {
+.header-default__title {
   cursor: pointer;
 }
 </style>

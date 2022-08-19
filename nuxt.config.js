@@ -34,6 +34,7 @@ export default {
     '~/components/atoms/buttons',
     '~/components/atoms/formats',
     '~/components/atoms/images',
+    '~/components/atoms/inputs',
     '~/components/molecules',
     '~/components/molecules/labels',
     '~/components/organisms',
