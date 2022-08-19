@@ -22,7 +22,7 @@
               {{ formatGenres }}
             </div>
             <BtnSmall @click="$emit('click:favorite', movie)">
-              <v-icon> {{ favorite }}</v-icon>
+              {{ favorite }}
             </BtnSmall>
           </div>
         </div>

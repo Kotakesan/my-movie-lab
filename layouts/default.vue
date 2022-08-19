@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <HeaderDefault @click="sidebar = !sidebar" />
+    <HeaderDefault @click:sidebar="sidebar = !sidebar" />
     <v-main>
       <v-container>
         <nuxt />

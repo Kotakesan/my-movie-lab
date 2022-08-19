@@ -7,6 +7,9 @@
       :max-width="maxWidth"
       contain
     />
+    <div v-if="!imageSource" class="no-img">
+      <v-icon> mdi-circle-off-outline </v-icon>
+    </div>
     <div
       v-if="!noHover"
       class="image-movie__title-wrapper"
@@ -43,6 +46,13 @@ export default {
 <style lang="scss" scoped>
 .image-movie {
   position: relative;
+  .no-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: #fff;
+  }
 }
 .image-movie .image-movie__title {
   color: #fff;
