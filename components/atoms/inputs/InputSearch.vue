@@ -10,7 +10,6 @@
       clearable
       @input="$emit('input', $event)"
       @click:prepend-inner="$emit('search')"
-      @click:clear="$emit('click:clear')"
     />
   </v-form>
 </template>

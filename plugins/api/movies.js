@@ -21,7 +21,7 @@ export default class {
 
   recommendations = {
     list: (id) => {
-      this.axios
+      return this.axios
         .get(
           `${resource}/${id}/recommendations?api_key=42f0a504684fbdc1c5af56bc8d909ceb`
         )
