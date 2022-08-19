@@ -6,20 +6,18 @@
       @click:favorite="onClickFavorite"
     />
     <ContentMovie title="Overview" :content="movie.overview" />
-    <ContentCollection
-      v-if="movie.belongs_to_collection"
-      class="movie-content mr-4"
-      :collection="movie.belongs_to_collection"
-    />
-    <!-- TODO: recommended movies -->
-    <!-- <ListMovies
-        v-if="recommendations"
-        class="movie-content"
+    <div class="d-flex">
+      <ContentCollection
+        class="movie-detail mr-4"
+        :collection="movie.belongs_to_collection || undefined"
+      />
+      <ListMovies
+        class="movie-detail"
         title="Recommended Movies"
         :movies="recommendations"
-        image-max-width="200%"
         @click="onClick"
-      /> -->
+      />
+    </div>
   </div>
 </template>
 
@@ -46,10 +44,9 @@ export default {
     ...mapGetters('favorite', ['movies']),
   },
   methods: {
-    // TODO: recommended movies
-    // onClick(movie) {
-    //   this.$router.push(`/movies/${movie.id}`)
-    // },
+    onClick(movie) {
+      this.$router.push(`/movies/${movie.id}`)
+    },
     onClickFavorite(movie) {
       this.$store.commit('favorite/favor', movie)
     },
@@ -58,7 +55,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.movie-content {
+.movie-detail {
   width: 50vw;
 }
 </style>

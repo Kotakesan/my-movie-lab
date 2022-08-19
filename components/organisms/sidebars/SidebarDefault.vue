@@ -37,7 +37,7 @@ export default {
         {
           icon: 'mdi-star',
           title: 'Favorite Movies',
-          to: '/movies/favorite',
+          to: '/movies/favorites',
         },
       ],
     }
