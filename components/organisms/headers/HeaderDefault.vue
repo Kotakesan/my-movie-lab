@@ -11,13 +11,13 @@
       </div>
     </v-toolbar-title>
     <v-spacer />
-    <v-toolbar-items>
-      <v-btn icon @click.stop="$router.push('/movies/favorites')">
-        <v-icon size="32px">mdi-star-circle</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="$emit('click')">
-        <v-icon size="32px">mdi-account-circle</v-icon>
-      </v-btn>
+    <v-toolbar-items class="align-center">
+      <BtnSmall size="32px" @click="$router.push('/movies/favorites')">
+        mdi-star-circle
+      </BtnSmall>
+      <BtnSmall size="32px" @click="$emit('click:sidebar')">
+        mdi-account-circle
+      </BtnSmall>
     </v-toolbar-items>
   </v-app-bar>
 </template>
