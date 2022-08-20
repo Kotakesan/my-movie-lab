@@ -15,7 +15,10 @@
       class="image-movie__title-wrapper"
       @click="$emit('click')"
     >
-      <div class="image-movie__title pt-16 text-center font-weight-bold">
+      <div
+        class="image-movie__title pt-16 text-center font-weight-bold"
+        :title="title"
+      >
         {{ title }}
       </div>
     </div>

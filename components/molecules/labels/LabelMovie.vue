@@ -5,7 +5,7 @@
       :style="{ backgroundImage: `url(${bgImagePath})` }"
     >
       <div class="label-movie__label d-flex align-center">
-        <div>
+        <div class="label-movie__image">
           <ImageMovie
             :title="movie.title"
             :image-source="movie.poster_path"
@@ -13,18 +13,18 @@
             no-hover
           />
         </div>
-        <div class="flex-grow-1">
+        <div class="label-movie__title">
           <FormatTitle :title="movie.title" :tagline="movie.tagline" />
+          <BtnSmall
+            class="mt-2"
+            size="32px"
+            @click="$emit('click:favorite', movie)"
+          >
+            {{ favorite }}
+          </BtnSmall>
         </div>
-        <div class="mt-6 pl-8">
-          <div class="text-right">
-            <div class="mb-1">
-              {{ formatGenres }}
-            </div>
-            <BtnSmall @click="$emit('click:favorite', movie)">
-              {{ favorite }}
-            </BtnSmall>
-          </div>
+        <div class="label-movie__genre pl-8">
+          {{ formatGenres }}
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@ export default {
       return this.movie.genres.map(({ name }) => name).join(', ')
     },
     favorite() {
-      return this.isFavored ? 'mdi-star' : 'mdi-star-outline'
+      return this.isFavored ? 'mdi-star' : 'mdi-star-plus-outline'
     },
   },
 }
@@ -69,6 +69,12 @@ export default {
       transparent,
       rgb(18, 18, 18)
     );
+  }
+  .label-movie__title {
+    width: 50%;
+  }
+  .label-movie__genre {
+    width: 20%;
   }
 }
 </style>
