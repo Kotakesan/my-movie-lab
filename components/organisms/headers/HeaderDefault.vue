@@ -4,7 +4,7 @@
       <div>
         <div class="d-flex align-center">
           <div class="header-default__title">
-            <div class="d-flex" @click="$router.push('/movies')">
+            <div class="d-flex" @click="onClickTitle">
               <v-icon class="mr-4">mdi-movie-open-star</v-icon>
               <div>
                 {{ title }}
@@ -42,6 +42,10 @@ export default {
     }
   },
   methods: {
+    onClickTitle() {
+      this.searchText = ''
+      this.$router.push('/movies')
+    },
     onSearch() {
       this.$router.push({
         path: '/movies',
