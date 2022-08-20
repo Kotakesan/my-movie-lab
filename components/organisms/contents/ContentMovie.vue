@@ -1,7 +1,21 @@
 <template>
   <div>
     <LabelTitle class="pt-4" :title="title" />
-    <div class="card-content__text pa-8">{{ content }}</div>
+    <div class="d-flex content-movie pa-8">
+      <div class="content-movie__overview">{{ overview }}</div>
+      <div class="content-movie__credit px-8">
+        <span>Casts:</span>
+        <div v-for="(cast, index) in casts" :key="index" :title="cast">
+          {{ cast }}
+        </div>
+      </div>
+      <div class="content-movie__credit">
+        <span>Director:</span>
+        <div :title="director">
+          {{ director }}
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -9,14 +23,34 @@
 export default {
   props: {
     title: { type: String, default: '' },
-    content: { type: String, default: '' },
+    overview: { type: String, default: '' },
+    credit: { type: Object, default: () => ({}) },
+  },
+  computed: {
+    casts() {
+      return this.credit.cast.map(({ name }) => name).slice(0, 4)
+    },
+    director() {
+      return this.credit.crew.find(({ job }) => job === 'Director').name
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.card-content__text {
+.content-movie {
   font-size: 18px;
-  line-height: 2;
+  .content-movie__overview {
+    width: 70%;
+    line-height: 2;
+  }
+  .content-movie__credit {
+    width: 15%;
+    div {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
 }
 </style>

@@ -5,14 +5,18 @@
       :is-favored="isFavored"
       @click:favorite="onClickFavorite"
     />
-    <ContentMovie title="Overview" :content="movie.overview" />
+    <ContentMovie
+      title="Overview"
+      :overview="movie.overview"
+      :credit="credit"
+    />
     <div class="d-flex">
       <ContentCollection
-        class="movie-detail mr-4"
+        class="movie-detail mr-2"
         :collection="movie.belongs_to_collection || undefined"
       />
       <ListMovies
-        class="movie-detail"
+        class="movie-detail ml-2"
         title="Recommended Movies"
         :movies="recommendations"
         @click="onClick"
@@ -31,10 +35,12 @@ export default {
     const recommendations = await app.$_api.movies.recommendations.list(
       movie.id
     )
+    const credit = await app.$_api.movies.credit.list(movie.id)
     return {
       movieId,
       movie,
       recommendations,
+      credit,
     }
   },
   computed: {
@@ -56,6 +62,6 @@ export default {
 
 <style lang="scss" scoped>
 .movie-detail {
-  width: 50vw;
+  width: 50%;
 }
 </style>
