@@ -4,7 +4,7 @@
     <div v-if="searchText && !movies.length" class="pa-8 movies__not-found">
       No movies found.
     </div>
-    <!-- <ModalMovieDetail v-model="modal" :movie="selectedMovie" /> -->
+    <Paginate :value="page" :length="length" @input="onChangePage" />
   </div>
 </template>
 
@@ -12,43 +12,57 @@
 export default {
   async asyncData({ app, query }) {
     const searchText = query.query
-    const movies = searchText
-      ? await app.$_api.search.movie.list(query)
+    const page = 1
+
+    const { movies, totalPages } = searchText
+      ? await app.$_api.search.movie.list({ query: searchText, page })
       : await app.$_api.movies.popular.list()
 
     return {
-      movies,
       searchText,
-    }
-  },
-  data() {
-    return {
-      selectedMovie: {},
-      modal: false,
+      page,
+      movies,
+      totalPages,
     }
   },
   computed: {
     title() {
       return this.searchText ? 'Search Movies' : 'Popular Movies'
     },
+    length() {
+      // NOTE: Page query must be less than or equal to 500
+      return this.totalPages >= 500 ? 500 : this.totalPages
+    },
   },
   watch: {
     async $route({ query }) {
+      this.page = 1
       this.searchText = query.query
-      this.searchText
-        ? await this.onSearch(this.searchText)
-        : await this.getMovies()
+      this.searchText ? await this.onSearch() : await this.getMovies()
     },
   },
   methods: {
     onClick(movie) {
       this.$router.push(`/movies/${movie.id}`)
     },
-    async onSearch(searchText) {
-      this.movies = await this.$_api.search.movie.list({ query: searchText })
+    async onChangePage(page) {
+      this.page = page
+      this.searchText ? await this.onSearch() : await this.getMovies()
+    },
+    async onSearch() {
+      const { movies, totalPages } = await this.$_api.search.movie.list({
+        query: this.searchText,
+        page: this.page,
+      })
+      this.movies = movies
+      this.totalPages = totalPages
     },
     async getMovies() {
-      this.movies = await this.$_api.movies.popular.list()
+      const { movies, totalPages } = await this.$_api.movies.popular.list({
+        page: this.page,
+      })
+      this.movies = movies
+      this.totalPages = totalPages
     },
   },
 }
