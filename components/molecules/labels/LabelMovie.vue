@@ -24,9 +24,7 @@
           </BtnSmall>
         </div>
         <div class="label-movie__genre pl-8">
-          <div>
-            {{ formatGenres }}
-          </div>
+          {{ formatGenres }}
         </div>
       </div>
     </div>
