@@ -15,13 +15,11 @@
         </div>
         <div class="label-movie__title">
           <FormatTitle :title="movie.title" :tagline="movie.tagline" />
-          <BtnSmall
-            class="mt-2"
-            size="32px"
-            @click="$emit('click:favorite', movie)"
-          >
-            {{ favorite }}
-          </BtnSmall>
+          <div class="label-movie__btn-favorite mt-2">
+            <BtnSmall size="32px" @click="$emit('click:favorite', movie)">
+              {{ favorite }}
+            </BtnSmall>
+          </div>
         </div>
         <div class="label-movie__genre pl-8">
           {{ formatGenres }}
@@ -56,7 +54,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .label-movie {
   height: 30vh;
   width: 100%;
@@ -76,5 +74,8 @@ export default {
   .label-movie__genre {
     width: 20%;
   }
+}
+.label-movie__btn-favorite .v-btn:hover::before {
+  opacity: 0.5;
 }
 </style>

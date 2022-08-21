@@ -3,13 +3,13 @@
     <LabelTitle class="pt-4" :title="title" />
     <div class="d-flex content-movie pa-8">
       <div class="content-movie__overview">{{ overview }}</div>
-      <div class="content-movie__credit px-8">
+      <div class="content-movie__cast pl-8 pr-4">
         <span>Casts:</span>
         <div v-for="(cast, index) in casts" :key="index" :title="cast">
           {{ cast }}
         </div>
       </div>
-      <div class="content-movie__credit">
+      <div class="content-movie__director">
         <span>Director:</span>
         <div :title="director">
           {{ director }}
@@ -41,16 +41,22 @@ export default {
 .content-movie {
   font-size: 18px;
   .content-movie__overview {
-    width: 70%;
+    width: 60%;
     line-height: 2;
   }
-  .content-movie__credit {
-    width: 15%;
+  .content-movie__cast,
+  .content-movie__director {
     div {
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
     }
+  }
+  .content-movie__cast {
+    width: 25%;
+  }
+  .content-movie__director {
+    width: 15%;
   }
 }
 </style>
