@@ -3,7 +3,7 @@
     <LabelTitle class="pt-4" :title="title" />
     <div class="d-flex content-movie pa-8">
       <div class="content-movie__overview">{{ overview }}</div>
-      <div class="content-movie__credit px-8">
+      <div class="content-movie__credit pl-12 pr-4">
         <span>Casts:</span>
         <div v-for="(cast, index) in casts" :key="index" :title="cast">
           {{ cast }}
@@ -41,11 +41,11 @@ export default {
 .content-movie {
   font-size: 18px;
   .content-movie__overview {
-    width: 70%;
+    width: 50%;
     line-height: 2;
   }
   .content-movie__credit {
-    width: 15%;
+    width: 25%;
     div {
       white-space: nowrap;
       text-overflow: ellipsis;
