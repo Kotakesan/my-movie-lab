@@ -42,7 +42,6 @@ export default {
     '~/components/organisms/contents',
     '~/components/organisms/headers',
     '~/components/organisms/lists',
-    '~/components/organisms/modals',
     '~/components/organisms/sidebars',
   ],
 
