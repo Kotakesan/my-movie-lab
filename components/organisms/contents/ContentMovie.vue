@@ -31,7 +31,8 @@ export default {
       return this.credit.cast.map(({ name }) => name).slice(0, 4)
     },
     director() {
-      return this.credit.crew.find(({ job }) => job === 'Director').name
+      const director = this.credit.crew.find(({ job }) => job === 'Director')
+      return director ? director.name : ''
     },
   },
 }
