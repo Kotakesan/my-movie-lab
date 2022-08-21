@@ -5,7 +5,7 @@
       :style="{ backgroundImage: `url(${bgImagePath})` }"
     >
       <div class="label-movie__label d-flex align-center">
-        <div class="label-movie__image">
+        <div class="label-movie__img">
           <ImageMovie
             :title="movie.title"
             :image-source="movie.poster_path"
@@ -67,6 +67,9 @@ export default {
       transparent,
       rgb(18, 18, 18)
     );
+  }
+  .label-movie__img {
+    min-width: 30%;
   }
   .label-movie__title {
     width: 50%;
