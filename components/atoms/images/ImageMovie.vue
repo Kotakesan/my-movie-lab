@@ -49,10 +49,11 @@ export default {
 <style lang="scss" scoped>
 .image-movie {
   position: relative;
+  min-height: 100%;
   .no-img {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
     opacity: 1;
     color: #fff;
   }
