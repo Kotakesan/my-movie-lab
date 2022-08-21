@@ -3,7 +3,7 @@
     <LabelTitle class="pt-4" :title="title" />
     <div class="d-flex content-movie pa-8">
       <div class="content-movie__overview">{{ overview }}</div>
-      <div class="content-movie__credit pl-8 pr-4">
+      <div class="content-movie__credit pl-12 pr-4">
         <span>Casts:</span>
         <div v-for="(cast, index) in casts" :key="index" :title="cast">
           {{ cast }}
