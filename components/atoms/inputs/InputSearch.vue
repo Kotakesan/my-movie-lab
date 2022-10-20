@@ -8,6 +8,7 @@
       prepend-inner-icon="mdi-magnify"
       color="white"
       clearable
+      data-testid="input-search"
       @input="$emit('input', $event)"
       @click:prepend-inner="$emit('search')"
     />

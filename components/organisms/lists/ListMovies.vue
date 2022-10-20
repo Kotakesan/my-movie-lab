@@ -7,6 +7,7 @@
         :key="index"
         class="mx-2 mb-4"
         cols="2"
+        data-testid="list-movies__movie"
       >
         <ImageMovie
           :title="movie.title"

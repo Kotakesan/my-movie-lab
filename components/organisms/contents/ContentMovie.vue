@@ -5,13 +5,18 @@
       <div class="content-movie__overview">{{ overview }}</div>
       <div class="content-movie__credit pl-12 pr-4">
         <span>Casts:</span>
-        <div v-for="(cast, index) in casts" :key="index" :title="cast">
+        <div
+          v-for="(cast, index) in casts"
+          :key="index"
+          :title="cast"
+          data-testid="content-movie__casts"
+        >
           {{ cast }}
         </div>
       </div>
       <div class="content-movie__credit">
         <span>Director:</span>
-        <div :title="director">
+        <div :title="director" data-testid="content-movie__director">
           {{ director }}
         </div>
       </div>
